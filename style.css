@@ -1,5 +1,5 @@
 body {
-    background-color: #C3FF99;
+    background-color: #9aa7f0;
 }
 
 h1 {
@@ -8,7 +8,7 @@ h1 {
     font-family: 'Kalam', cursive;
     color: #1E5128;
     text-shadow: #C3FF99;
-    text-shadow: 2px 1px 2px #9CFF2E;
+    text-shadow: 3px 1px 2px #DEF5E5;
 }
 
 #container {
@@ -51,4 +51,14 @@ h1 {
     font-size: 20px;
     font-family: 'Kalam', cursive;
     background-color: #BCCEF8;
+    color: #02383C;
+}
+
+#myVideo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -10;
 }
