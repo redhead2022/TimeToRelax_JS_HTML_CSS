@@ -45,6 +45,11 @@ function timerOne() {
 
     amountTimeOne--;
 
+    if (amountTimeOne < 0) {
+      stopTimerOne();
+      amountTimeOne = 0;
+    }
+
     if (secondsOne < 10) {
       secondsOne = "0" + secondsOne;
     }
@@ -54,10 +59,6 @@ function timerOne() {
     }
 
     countdown.textContent = `${minutesOne} : ${secondsOne}`;
-    if (amountTimeOne < 0) {
-      stopTimerOne();
-      amountTimeOne = 0;
-    }
   }
   timerIdOne = setInterval(calculateTimeOne, 1000);
 }
@@ -75,10 +76,9 @@ function timerTwo() {
 
   btnOne.addEventListener("click", timerOne);
   btnThree.addEventListener("click", timerThree);
-
-  amountTimeTwo =  10* 60;
-
   btnTwo.removeEventListener("click", timerTwo);
+
+  amountTimeTwo = 10 * 60;
 
   function calculateTimeTwo() {
     const countdown = document.querySelector("#timer");
@@ -87,6 +87,11 @@ function timerTwo() {
     let secondsTwo = amountTimeTwo % 60;
 
     amountTimeTwo--;
+
+    if (amountTimeTwo < 0) {
+      stopTimerTwo();
+      amountTimeTwo = 0;
+    }
 
     if (secondsTwo < 10) {
       secondsTwo = "0" + secondsTwo;
@@ -97,10 +102,6 @@ function timerTwo() {
     }
 
     countdown.textContent = `${minutesTwo} : ${secondsTwo}`;
-    if (amountTimeTwo < 0) {
-      stopTimerTwo();
-      amountTimeTwo = 0;
-    }
   }
   timerIdTwo = setInterval(calculateTimeTwo, 1000);
 }
@@ -129,6 +130,10 @@ function timerThree() {
     let secondsThree = amountTimeThree % 60;
 
     amountTimeThree--;
+    if (amountTimeThree < 0) {
+      stopTimerThree();
+      amountTimeThree = 0;
+    }
 
     if (secondsThree < 10) {
       secondsThree = "0" + secondsThree;
@@ -139,10 +144,6 @@ function timerThree() {
     }
 
     countdown.textContent = `${minutesThree} : ${secondsThree}`;
-    if (secondsThree < 0) {
-      stopTimerThree();
-      amountTimeThree = 0;
-    }
   }
   timerIdThree = setInterval(calculateTimeThree, 1000);
 }
