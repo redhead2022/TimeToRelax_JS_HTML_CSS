@@ -6,26 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time to relax</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>Time to relax</h1>
 
-    <div id="container">
-      <input id="time" type="text" placeholder="Write the time..." />
+    <h4>Choose the time</h4>
+    <div id="yourTime">
+      <button class="minutes" id="min15">15 min</button>
+      <button class="minutes" id="min10">10 min</button>
+      <button class="minutes" id="min5">5 min</button>
+    </div>
 
+    <div id="container">
       <p id="timer">00:00</p>
 
       <button id="btn">Music</button>
 
       <audio id="player" loop>
-        <source src="https://cdn.glitch.com/eeaf6ebc-3ee8-45cf-aa54-1394e24c3353%2FTunePocket-Soft-Ocean-Waves-Meditation-5-Breaths-Per-Min-5-Min-Preview.mp3?v=1628649760087" type="audio/mp3">
-    </audio>
+        <source
+          src="https://cdn.glitch.com/eeaf6ebc-3ee8-45cf-aa54-1394e24c3353%2FTunePocket-Soft-Ocean-Waves-Meditation-5-Breaths-Per-Min-5-Min-Preview.mp3?v=1628649760087"
+          type="audio/mp3"
+        />
+      </audio>
 
-    <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline id="myVideo" controls>
-        <source src="https://player.vimeo.com/external/199224619.sd.mp4?s=801da27765a835ea41aa8b957553287d12661142&profile_id=164" type="video/mp4">
-    </video>
-
+      <video
+        autoplay="autoplay"
+        loop="loop"
+        muted
+        defaultMuted
+        playsinline
+        id="myVideo"
+        controls
+      >
+        <source
+          src="https://player.vimeo.com/external/199224619.sd.mp4?s=801da27765a835ea41aa8b957553287d12661142&profile_id=164"
+          type="video/mp4"
+        />
+      </video>
     </div>
 
     <script src="script.js"></script>
