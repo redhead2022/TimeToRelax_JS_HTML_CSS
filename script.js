@@ -2,9 +2,9 @@ const myAudio = document.querySelector("#player");
 const button = document.querySelector("#btn");
 
 button.addEventListener("click", () => {
-  if (myAudio.paused == true) {
+  if (myAudio.paused) {
     myAudio.play();
-  } else if (myAudio.paused == false) {
+  } else {
     myAudio.pause();
   }
 });
@@ -13,141 +13,50 @@ const btnOne = document.querySelector("#min15");
 const btnTwo = document.querySelector("#min10");
 const btnThree = document.querySelector("#min5");
 
-btnOne.addEventListener("click", timerOne);
-btnTwo.addEventListener("click", timerTwo);
-btnThree.addEventListener("click", timerThree);
+btnOne.addEventListener("click", () => {
+  timer(15);
+});
+btnTwo.addEventListener("click", () => {
+  timer(10);
+});
+btnThree.addEventListener("click", () => {
+  timer(5);
+});
 
-let amountTimeOne = 0;
-let amountTimeTwo = 0;
-let amountTimeThree = 0;
+let amountTime = 0;
+let timerId;
 
-let timerIdOne;
-let timerIdTwo;
-let timerIdThree;
 
-function timerOne() {
-  stopTimerTwo();
-  stopTimerThree();
+function timer(time) {
+  stopTimer();
+  amountTime = time * 60;
 
-  amountTimeOne = 15 * 60;
-  amountTimeTwo = 0;
-  amountTimeThree = 0;
-
-  btnTwo.addEventListener("click", timerTwo);
-  btnThree.addEventListener("click", timerThree);
-  btnOne.removeEventListener("click", timerOne);
-
-  function calculateTimeOne() {
+  function calculateTime() {
     const countdown = document.querySelector("#timer");
 
-    let minutesOne = Math.floor(amountTimeOne / 60);
-    let secondsOne = amountTimeOne % 60;
+    let minutes = Math.floor(amountTime / 60);
+    let seconds = amountTime % 60;
 
-    amountTimeOne--;
+    amountTime--;
 
-    if (amountTimeOne < 0) {
-      stopTimerOne();
-      amountTimeOne = 0;
+    if (amountTime < 0) {
+      stopTimer();
+      amountTime = 0;
     }
 
-    if (secondsOne < 10) {
-      secondsOne = "0" + secondsOne;
+    if (seconds < 10) {
+      seconds = "0" + seconds;
     }
 
-    if (minutesOne < 10) {
-      minutesOne = "0" + minutesOne;
+    if (minutes < 10) {
+      minutes = "0" + minutes;
     }
 
-    countdown.textContent = `${minutesOne} : ${secondsOne}`;
+    countdown.textContent = `${minutes} : ${seconds}`;
   }
-  timerIdOne = setInterval(calculateTimeOne, 1000);
+  timerId = setInterval(calculateTime, 1000);
 }
 
-function stopTimerOne() {
-  clearInterval(timerIdOne);
-}
-
-function timerTwo() {
-  stopTimerOne();
-  stopTimerThree();
-
-  amountTimeOne = 0;
-  amountTimeThree = 0;
-
-  btnOne.addEventListener("click", timerOne);
-  btnThree.addEventListener("click", timerThree);
-  btnTwo.removeEventListener("click", timerTwo);
-
-  amountTimeTwo = 10 * 60;
-
-  function calculateTimeTwo() {
-    const countdown = document.querySelector("#timer");
-
-    let minutesTwo = Math.floor(amountTimeTwo / 60);
-    let secondsTwo = amountTimeTwo % 60;
-
-    amountTimeTwo--;
-
-    if (amountTimeTwo < 0) {
-      stopTimerTwo();
-      amountTimeTwo = 0;
-    }
-
-    if (secondsTwo < 10) {
-      secondsTwo = "0" + secondsTwo;
-    }
-
-    if (minutesTwo < 10) {
-      minutesTwo = "0" + minutesTwo;
-    }
-
-    countdown.textContent = `${minutesTwo} : ${secondsTwo}`;
-  }
-  timerIdTwo = setInterval(calculateTimeTwo, 1000);
-}
-
-function stopTimerTwo() {
-  clearInterval(timerIdTwo);
-}
-
-function timerThree() {
-  stopTimerTwo();
-  stopTimerOne();
-  amountTimeOne = 0;
-  amountTimeTwo = 0;
-
-  amountTimeThree = 5 * 60;
-
-  btnOne.addEventListener("click", timerOne);
-  btnTwo.addEventListener("click", timerTwo);
-
-  btnThree.removeEventListener("click", timerThree);
-
-  function calculateTimeThree() {
-    const countdown = document.querySelector("#timer");
-
-    let minutesThree = Math.floor(amountTimeThree / 60);
-    let secondsThree = amountTimeThree % 60;
-
-    amountTimeThree--;
-    if (amountTimeThree < 0) {
-      stopTimerThree();
-      amountTimeThree = 0;
-    }
-
-    if (secondsThree < 10) {
-      secondsThree = "0" + secondsThree;
-    }
-
-    if (minutesThree < 10) {
-      minutesThree = "0" + minutesThree;
-    }
-
-    countdown.textContent = `${minutesThree} : ${secondsThree}`;
-  }
-  timerIdThree = setInterval(calculateTimeThree, 1000);
-}
-
-function stopTimerThree() {
-  clearInterval(timerIdThree);
+function stopTimer() {
+  clearInterval(timerId);
 }
