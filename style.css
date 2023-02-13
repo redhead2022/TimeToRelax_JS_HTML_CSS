@@ -1,23 +1,28 @@
+html {
+  font-size: 25px;
+  font-family: "Kalam", cursive;
+}
+
 body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
   background-color: #9aa7f0;
 }
 
 h1 {
   text-align: center;
-  font-size: 45px;
-  font-family: "Kalam", cursive;
+  font-size: 2rem;
   color: #1e5128;
   text-shadow: #c3ff99;
-  text-shadow: 3px 1px 2px #def5e5;
+  text-shadow: 5px 1px 2px #f3dbea;
 }
 
 h4 {
   text-align: center;
-  font-size: 25px;
-  font-family: "Kalam", cursive;
+  font-size: 1rem;
   color: #1e5128;
-  text-shadow: #c3ff99;
-  text-shadow: 3px 1px 2px #def5e5;
+  text-shadow: 3px 1px 2px #f3dbea;
 }
 
 #container {
@@ -35,37 +40,35 @@ h4 {
 
 .minutes {
   padding: 10px;
-  background-color: azure;
   color: #02383c;
   text-shadow: 2px 2px 2px #6ca7df;
-  border: 2px solid #6fda78;
+  border: 3px solid #f3dbea;
   border-radius: 20px;
-  font-size: 20px;
+  font-size: 0.8rem;
   font-family: "Kalam", cursive;
-  background-color: #ceecce;
-  margin: 10px;
+  background-color: #dbd2d8;
+  margin: 20px 30px;
 }
 
 #timer {
-  padding: 30px;
-  background-color: azure;
+  padding: 20px;
+  background-color: #e2c2d6;
   color: #02383c;
-  text-shadow: 2px 1px 2px #6ca7df;
-  border: 2px solid #6fda78;
-  border-radius: 20px;
-  font-size: 40px;
-  font-family: "Kalam", cursive;
-  background-color: #f9ffa4;
+  text-shadow: 4px 1px 2px #6ca7df;
+  border: 3px solid #f3dbea;
+  border-radius: 40px;
+  font-size: 1.6rem;
 }
 
 #btn {
-  padding: 10px;
-  border-radius: 20px;
-  border: 2px solid #4bcf47;
-  font-size: 20px;
-  font-family: "Kalam", cursive;
-  background-color: #bccef8;
+  padding: 5px 15px;
+  background-color: #eccce2;
   color: #02383c;
+  text-shadow: 4px 1px 2px #6ca7df;
+  border: 3px solid #f3dbea;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-family: "Kalam", cursive;
 }
 
 #myVideo {
@@ -84,6 +87,6 @@ h4 {
 
   #timer {
     padding: 25px;
-    font-size: 30px;
+    font-size: 1.2rem;
   }
 }

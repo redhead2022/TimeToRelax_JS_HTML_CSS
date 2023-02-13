@@ -26,7 +26,6 @@ btnThree.addEventListener("click", () => {
 let amountTime = 0;
 let timerId;
 
-
 function timer(time) {
   stopTimer();
   amountTime = time * 60;
