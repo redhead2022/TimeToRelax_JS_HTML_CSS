@@ -48,6 +48,7 @@ h4 {
   font-family: "Kalam", cursive;
   background-color: #dbd2d8;
   margin: 20px 30px;
+  cursor: url("https://img.icons8.com/dusk/64/null/flower-doodle.png"), pointer;
 }
 
 #timer {
@@ -69,6 +70,7 @@ h4 {
   border-radius: 30px;
   font-size: 0.8rem;
   font-family: "Kalam", cursive;
+  cursor: url("https://img.icons8.com/dusk/64/null/flower-doodle.png"), pointer;
 }
 
 #myVideo {
